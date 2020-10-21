@@ -1,0 +1,16 @@
+.orbit-container {
+  position: relative;
+  transform: rotateX(55deg) translateY(-500px);
+  margin: 0 auto;
+}
+.row.container-full .col-lg-3.h-100 {
+  overflow: hidden auto;
+}
+@keyframes modifiedBounce {
+  from {
+    transform: translate(-32px, -140px) scale(2) rotateY(50deg);
+  }
+  to {
+    transform: translate(-32px, -142px) scale(2) rotateY(50deg);
+  }
+}

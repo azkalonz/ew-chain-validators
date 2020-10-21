@@ -1,0 +1,100 @@
+{
+	"validators": [{
+		"name": "Energy Web",
+		"address": "0x0",
+		"addresses": ["0xd65b4c25a4ce1e024ff13425df1e0e574a1a0e9b", "0x83329c3fd90d7ee2efd546e0dc6453e9172a0643", "0xde15831ac319dab5eae5fd1fd9d52876c5e50f20"],
+		"logo": "assets/images/node-logo/energy-web.png"
+	}, {
+		"name": "OLI Systems GmbH",
+		"address": "0x86a5a44cff58638784c2028e7181cede57933321",
+		"logo": "assets/images/node-logo/oli.png"
+	}, {
+		"name": "Mercados Electricos",
+		"address": "0xb5da81b0c1c808ef6d761dacfba725bfe7bdf0b8",
+		"logo": "assets/images/node-logo/mercados-electricos.png"
+	}, {
+		"name": "Anyblock Analytics",
+		"address": "0xb1dd5415dfa3e82e63af394e48f0d4d8e686425d",
+		"logo": "assets/images/node-logo/anyblock.png"
+	}, {
+		"name": "Engie/TEO",
+		"address": "0x319736d0e5e921df081e50cb36c7b4ba3642a651",
+		"logo": "assets/images/node-logo/engie.png"
+	}, {
+		"name": "AES",
+		"address": "0x9963b4ed7eb38b26e3aae8cbf5062434c08ccd48",
+		"logo": "assets/images/node-logo/AES.png"
+	}, {
+		"name": "Elia Group",
+		"address": "0x63be1c775237f4c02f94396a7a7837d6c9b14424",
+		"logo": "assets/images/node-logo/elia-group.png"
+	}, {
+		"name": "Elocity",
+		"address": "0x8f3b4a832973ac746507740d980d2d0aec9dec98",
+		"logo": "assets/images/node-logo/elocity.png"
+	}, {
+		"name": "FlexiDAO GmbH",
+		"address": "0x045df4ea79b1f17e451b9eb5e153db8ae95fe79c",
+		"logo": "assets/images/node-logo/flexidao.png"
+	}, {
+		"name": "Wirepas",
+		"address": "0x6c87141be1105c37b8b27daa25975c1575c22fd5",
+		"logo": "assets/images/node-logo/wirepas.png"
+	}, {
+		"name": "SP Group",
+		"address": "0xf02ba87b74453a54d5ebb5a048cbacb90046cdd9",
+		"logo": "assets/images/node-logo/spgroup.png"
+	}, {
+		"name": "Scytale Ventures",
+		"address": "0xbc04309d494b97a562be67a4a86b28bc0c583c10",
+		"logo": "assets/images/node-logo/scytale.png"
+	}, {
+		"name": "Slock.it",
+		"address": "0x09acd588ce7252d07fe4f4fac5d43b54ff57df79",
+		"logo": "assets/images/node-logo/slockit.png"
+	}, {
+		"name": "EDF",
+		"address": "0x9e88dd25b6236e625709ca2830dee8d0c70bda7d",
+		"logo": "assets/images/node-logo/EDF.png"
+	}, {
+		"name": "3Degrees",
+		"address": "0xa0827857fa91a9b4d720268b61b2dc96baa019fa",
+		"logo": "assets/images/node-logo/3degrees.png"
+	}, {
+		"name": "TEPCO",
+		"address": "0xce87047bb8174dd0aa423a626c97816263cc999e",
+		"logo": "assets/images/node-logo/tepco-logo.png"
+	}, {
+		"name": "Shell",
+		"address": "0x36442034c3bbb16e02aecab880b3918fa5845e45",
+		"logo": "assets/images/node-logo/shell.png"
+	}, {
+		"name": "Tenaska",
+		"address": "0x46495e58bc75cd44a8ec6ee6200a6035ef0332a0",
+		"logo": "assets/images/node-logo/tenaska.png"
+	}, {
+		"name": "PTT Group",
+		"address": "0xdad22897407d4f5e93e5d8b49b19abeba4b4bd89",
+		"logo": "assets/images/node-logo/ptt-group.png"
+	}, {
+		"name": "LO3",
+		"address": "0xd28a4659df172152cf3812dec96eddaa99a38c42",
+		"logo": "assets/images/node-logo/lo3energy.png"
+	}, {
+		"name": "Fluvius",
+		"address": "0xf37d30f8325771450c2ee1eb5b38bf4cc6e4338b",
+		"logo": "assets/images/node-logo/fluvius.png"
+	}, {
+		"name": "Acciona",
+		"address": "0xc77b908353e648c3c08a9071e9129ea9fcda4e23",
+		"logo": "assets/images/node-logo/acciona.png"
+	}, {
+		"name": "Stedin",
+		"address": "0x25b02276431d29e481878140a0db68a8a1350212",
+		"logo": "assets/images/node-logo/stedin.png"
+	}, {
+		"name": "APG",
+		"address": "0x66416b33f3b38287c7b13e3b4ecc72daa9764270",
+		"logo": "assets/images/node-logo/APG-Austrian-power-grid.png"
+	}]
+}

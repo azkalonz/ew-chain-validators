@@ -1,0 +1,101 @@
+{
+    "name": "Validators",
+    "children": [
+        {
+            "name": "Energy Web",
+            "logo": "assets/images/node-logo/energy-web.png"
+        },
+        {
+            "name": "3Degrees",
+            "logo": "assets/images/node-logo/3degrees.png"
+        },
+        {
+            "name": "AES",
+            "logo": "assets/images/node-logo/AES.png"
+        },
+        {
+            "name": "APG",
+            "logo": "assets/images/node-logo/APG-Austrian-power-grid.png"
+        },
+        {
+            "name": "Acciona",
+            "logo": "assets/images/node-logo/acciona.png"
+        },
+        {
+            "name": "Anyblock Analytics",
+            "logo": "assets/images/node-logo/anyblock.png"
+        },
+        {
+            "name": "EDF",
+            "logo": "assets/images/node-logo/EDF.png"
+        },
+        {
+            "name": "Elia Group",
+            "logo": "assets/images/node-logo/elia-group.png"
+        },
+        {
+            "name": "Elocity",
+            "logo": "assets/images/node-logo/elocity.png"
+        },
+        {
+            "name": "Engie/TEO",
+            "logo": "assets/images/node-logo/engie.png"
+        },
+        {
+            "name": "FlexiDAO GmbH",
+            "logo": "assets/images/node-logo/flexidao.png"
+        },
+        {
+            "name": "Fluvius",
+            "logo": "assets/images/node-logo/fluvius.png"
+        },
+        {
+            "name": "LO3",
+            "logo": "assets/images/node-logo/lo3energy.png"
+        },
+        {
+            "name": "Mercados Electricos",
+            "logo": "assets/images/node-logo/mercados-electricos.png"
+        },
+        {
+            "name": "OLI Systems GmbH",
+            "logo": "assets/images/node-logo/oli.png"
+        },
+        {
+            "name": "PTT Group",
+            "logo": "assets/images/node-logo/ptt-group.png"
+        },
+        {
+            "name": "SP Group",
+            "logo": "assets/images/node-logo/spgroup.png"
+        },
+        {
+            "name": "Scytale Ventures",
+            "logo": "assets/images/node-logo/scytale.png"
+        },
+        {
+            "name": "Shell",
+            "logo": "assets/images/node-logo/shell.png"
+        },
+        {
+            "name": "Slock.it",
+            "logo": "assets/images/node-logo/slockit.png"
+        },
+        {
+            "name": "Stedin",
+            "logo": "assets/images/node-logo/stedin.png"
+        },
+        {
+            "name": "TEPCO",
+            "logo": "assets/images/node-logo/tepco-logo.png"
+        },
+        {
+            "name": "Tenaska",
+            "logo": "assets/images/node-logo/tenaska.png"
+        },
+        {
+            "name": "Wirepas",
+            "logo": "assets/images/node-logo/wirepas.png"
+        }
+    ]
+}

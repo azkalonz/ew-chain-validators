@@ -1,0 +1,63 @@
+<ngx-spinner bdColor="#2B2040" color="transparent">
+  template="
+  <div id="loader">
+    <div class="row h-100">
+      <div class="col-md-4">
+        <div class="loading" id="loading5"></div>
+      </div>
+    </div>
+  </div>
+  "
+  <p id="loader-text">LOADING...</p>
+</ngx-spinner>
+
+<div class="row container-full">
+  <div class="col-12 col-lg-9 h-100">
+    <div class="center-page">
+      <div class="orbit-container">
+        <div class="number-wrapper" _ngcontent-fdj-c0="">
+          <div _ngcontent-fdj-c0="" class="digi-number">
+            {{ currentBlockNumber }}
+          </div>
+        </div>
+        <div id="viz"><svg></svg></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-3 h-100 validator-info">
+    <div class="panel-right" *ngFor="let validator of validators">
+      <h3 class="affiliate-title">{{ validator.name }}</h3>
+      <div class="affiliate-img">
+        <img [src]="validator.logo" />
+      </div>
+      <div>
+        <div class="affiliate-site">
+          <a href="https://www.energyweb.org/" target="_blank"
+            >www.energyweb.org</a
+          >
+        </div>
+        <div class="affiliate-desc">
+          <p>
+            Energy Web (EW) is a global nonprofit organization accelerating a
+            low-carbon, customer-centric electricity system by unleashing the
+            potential of blockchain and other decentralized technologies. EW
+            focuses on building core infrastructure and shared technology,
+            speeding adoption of commercial solutions, and fostering a community
+            of practice. In 2019 EW launched the Energy Web Chain, the world’s
+            first open-source, enterprise blockchain platform tailored to the
+            energy sector. EW’s technology roadmap has since grown to include
+            the Energy Web Decentralized Operating System (EW-DOS), a
+            “blockchain-plus” suite of decentralized solutions. EW also grew the
+            world’s largest energy blockchain ecosystem comprising utilities,
+            grid operators, renewable energy developers, corporate energy
+            buyers, and others.
+          </p>
+        </div>
+        <div class="affiliate-member-since">
+          <div class="mb-1">Member Since</div>
+          <div class="m-year">2017</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

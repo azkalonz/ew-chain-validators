@@ -1,0 +1,28 @@
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Rajdhani::400,500,600,900');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$validators-visualiser-client-primary: mat-palette($mat-indigo);
+$validators-visualiser-client-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$validators-visualiser-client-warn: mat-palette($mat-red);
+
+@import "./assets/css/preloader.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Source Sans Pro', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Rajdhani', sans-serif; } 
