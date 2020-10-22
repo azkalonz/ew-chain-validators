@@ -3,7 +3,7 @@ let ORBIT = false;
 let lineAnimationTick;
 
 function makeViz(size = [1500, 1500]) {
-  d3.json("/assets/js/validators.json", function(data) {
+  d3.json("assets/js/validators.json", function(data) {
     drawOrbit(data, size);
     window.data2 = data?.children;
     $("#viz")
@@ -105,7 +105,7 @@ function drawOrbit(_data, size) {
 
   d3.selectAll("g.node:not(.parent)")
     .append("image")
-    .attr("href", "/assets/images/node.svg")
+    .attr("href", "assets/images/node.svg")
     .attr(
       "style",
       "transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;"
