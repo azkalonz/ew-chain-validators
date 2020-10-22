@@ -225,6 +225,7 @@ function drawOrbit(_data, size) {
             xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
         });
       if (!isSelected(this.firstChild, block)) return;
+      window.clearTimeout(window.turnoffLineTick);
       d3.select(this)
         .select("image")
         .attr("style", function(d) {
@@ -236,7 +237,7 @@ function drawOrbit(_data, size) {
             return `opacity:1;transform: translate(-20px,-50px) rotateY(55deg) scale(1.3)`;
           } else return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
         });
-      setTimeout(() => {
+      window.turnoffLineTick = setTimeout(() => {
         d3.selectAll("line.connector").attr("stroke", "grey");
       }, 3500);
     });
