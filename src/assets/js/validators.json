@@ -3,99 +3,148 @@
     "children": [
         {
             "name": "Energy Web",
-            "logo": "assets/images/node-logo/energy-web.png"
+            "logo": "assets/images/node-logo/energy-web.png",
+            "description": "Energy Web (EW) is a global nonprofit organization accelerating a low-carbon, customer-centric electricity system by unleashing the potential of blockchain and other decentralized technologies. EW focuses on building core infrastructure and shared technology, speeding adoption of commercial solutions, and fostering a community of practice. In 2019 EW launched the Energy Web Chain, the world’s first open-source, enterprise blockchain platform tailored to the energy sector. EW’s technology roadmap has since grown to include the Energy Web Decentralized Operating System (EW-DOS), a “blockchain-plus” suite of decentralized solutions. EW also grew the world’s largest energy blockchain ecosystem comprising utilities, grid operators, renewable energy developers, corporate energy buyers, and others.",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "3Degrees",
-            "logo": "assets/images/node-logo/3degrees.png"
+            "logo": "assets/images/node-logo/3degrees.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "AES",
-            "logo": "assets/images/node-logo/AES.png"
+            "logo": "assets/images/node-logo/AES.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "APG",
-            "logo": "assets/images/node-logo/APG-Austrian-power-grid.png"
+            "logo": "assets/images/node-logo/APG-Austrian-power-grid.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Acciona",
-            "logo": "assets/images/node-logo/acciona.png"
+            "logo": "assets/images/node-logo/acciona.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Anyblock Analytics",
-            "logo": "assets/images/node-logo/anyblock.png"
+            "logo": "assets/images/node-logo/anyblock.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "EDF",
-            "logo": "assets/images/node-logo/EDF.png"
+            "logo": "assets/images/node-logo/EDF.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Elia Group",
-            "logo": "assets/images/node-logo/elia-group.png"
+            "logo": "assets/images/node-logo/elia-group.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Elocity",
-            "logo": "assets/images/node-logo/elocity.png"
+            "logo": "assets/images/node-logo/elocity.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Engie/TEO",
-            "logo": "assets/images/node-logo/engie.png"
+            "logo": "assets/images/node-logo/engie.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "FlexiDAO GmbH",
-            "logo": "assets/images/node-logo/flexidao.png"
+            "logo": "assets/images/node-logo/flexidao.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Fluvius",
-            "logo": "assets/images/node-logo/fluvius.png"
+            "logo": "assets/images/node-logo/fluvius.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "LO3",
-            "logo": "assets/images/node-logo/lo3energy.png"
+            "logo": "assets/images/node-logo/lo3energy.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Mercados Electricos",
-            "logo": "assets/images/node-logo/mercados-electricos.png"
+            "logo": "assets/images/node-logo/mercados-electricos.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "OLI Systems GmbH",
-            "logo": "assets/images/node-logo/oli.png"
+            "logo": "assets/images/node-logo/oli.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "PTT Group",
-            "logo": "assets/images/node-logo/ptt-group.png"
+            "logo": "assets/images/node-logo/ptt-group.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "SP Group",
-            "logo": "assets/images/node-logo/spgroup.png"
+            "logo": "assets/images/node-logo/spgroup.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Scytale Ventures",
-            "logo": "assets/images/node-logo/scytale.png"
+            "logo": "assets/images/node-logo/scytale.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Shell",
-            "logo": "assets/images/node-logo/shell.png"
+            "logo": "assets/images/node-logo/shell.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Slock.it",
-            "logo": "assets/images/node-logo/slockit.png"
+            "logo": "assets/images/node-logo/slockit.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Stedin",
-            "logo": "assets/images/node-logo/stedin.png"
+            "logo": "assets/images/node-logo/stedin.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "TEPCO",
-            "logo": "assets/images/node-logo/tepco-logo.png"
+            "logo": "assets/images/node-logo/tepco-logo.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Tenaska",
-            "logo": "assets/images/node-logo/tenaska.png"
+            "logo": "assets/images/node-logo/tenaska.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         },
         {
             "name": "Wirepas",
-            "logo": "assets/images/node-logo/wirepas.png"
+            "logo": "assets/images/node-logo/wirepas.png",
+            "memberSince": 2017,
+            "website": "www.energyweb.org"
         }
     ]
 }

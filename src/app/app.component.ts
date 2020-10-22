@@ -43,6 +43,7 @@ export class AppComponent {
 
     this.interval = setInterval(() => {
       this.web3.eth.getBlock("latest").then((block) => {
+        let win = this.winRef as any;
         if (this.currentBlock.number != block.number) {
           this.currentBlock = block;
           this.cubeAnimTimeout = setTimeout(() => {
@@ -50,10 +51,12 @@ export class AppComponent {
               .toString()
               .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           }, 3100);
-          (this.winRef as any).currentBlock = this.currentBlock;
+          win.animateCurrentBlock(this.currentBlock);
+          win.currentBlock = this.currentBlock;
         }
       });
     }, 5000);
+    this.spinner.hide();
 
     setTimeout(() => {
       this.spinner.hide();
@@ -62,18 +65,34 @@ export class AppComponent {
 
   private retrieveValidator() {
     this.appService.retrieveValidators().then((data) => {
-      this.validators = data;
+      let win = this.winRef as any;
+      this.validators = data.map((validator) => {
+        let localValidatorData = validatorsData.children.find(
+          (q) => q.name === validator.name
+        );
+        if (localValidatorData) {
+          return { ...validator, ...localValidatorData };
+        } else {
+          return validator;
+        }
+      });
       for (var i = 0; i < this.validators.length; i++) {
         this.validators[i]["index"] = i + 1;
       }
-      (this.winRef as any).d3Data = setInterval(() => {
-        if ((this.winRef as any).data2) {
-          (this.winRef as any).data2 = (this.winRef as any).data2.map((q) => {
+      win.d3Data = setInterval(() => {
+        if (win.data2) {
+          win.data2 = win.data2.map((q) => {
             let datum = data.find((qq) => qq.name === q.name);
-            if (datum) return { ...q, address: datum.address };
+            if (datum)
+              return {
+                ...q,
+                address: datum.addresses
+                  ? [...datum.addresses, datum.address]
+                  : [datum.address],
+              };
             else return q;
           });
-          (this.winRef as any).clearInterval((this.winRef as any).d3Data);
+          win.clearInterval(win.d3Data);
         }
       }, 3000);
     });

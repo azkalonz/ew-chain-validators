@@ -91,9 +91,6 @@ image.node-logo {
 }
 
 @media screen and (max-width: 991px) {
-  .validator-info {
-    display: none;
-  }
   .container-full {
     display: flex;
     overflow: scroll !important;

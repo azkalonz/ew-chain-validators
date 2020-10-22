@@ -1,6 +1,7 @@
 let ORBIT_SPEED = 20;
 let ORBIT = false;
 let lineAnimationTick;
+window.animateCurrentBlock = function() {};
 
 function makeViz(size = [1500, 1500]) {
   d3.json("assets/js/validators.json", function(data) {
@@ -16,7 +17,6 @@ function makeViz(size = [1500, 1500]) {
 }
 
 function drawOrbit(_data, size) {
-  //down with category20a()!!
   var div = d3
     .select("body")
     .append("div")
@@ -75,7 +75,7 @@ function drawOrbit(_data, size) {
         .attr("stroke", "cyan")
         .attr("x2", 0)
         .attr("y2", 0)
-        .attr("stroke-dasharray", "10,10")
+        .attr("stroke-dasharray", "6,6")
         .style("stroke-width", "2");
     });
   d3.selectAll("g.line-group.cyan")
@@ -100,6 +100,20 @@ function drawOrbit(_data, size) {
     })
     .attr("class", "node-logo")
     .attr("width", 50)
+    .on("mousedown", function(d, i) {
+      let name = "validator-" + i;
+      let offset =
+        $("a[name=" + name + "]").offset().top -
+        $("a[name=" + name + "]")
+          .offsetParent()
+          .offset().top;
+      $(".validator-info").animate(
+        {
+          scrollTop: offset + $(".validator-info").scrollTop(),
+        },
+        500
+      );
+    })
     .on("mouseover", nodeOver)
     .on("mouseout", nodeOut);
 
@@ -163,15 +177,13 @@ function drawOrbit(_data, size) {
       });
   });
 
-  function isSelected(el) {
+  function isSelected(el, currentBlock) {
     let name = el.getAttribute("data-name");
-    let node = window.data2.find((q) => q.name === name);
-    if (node && window.currentBlock) {
-      if (window.currentBlock.author === node.address) {
-        console.log(node.name);
+    let node = window.data2?.find((q) => q.name === name);
+    if (node && currentBlock) {
+      if (!!node.address.find((q) => q === currentBlock.author)) {
         d3.selectAll("line.connector").each(function() {
           if (this.getAttribute("data-name") === name) {
-            console.log(this.getAttribute("data-name", name));
             d3.select(this).attr("stroke", "cyan");
           } else {
             d3.select(this).attr("stroke", "grey");
@@ -181,53 +193,66 @@ function drawOrbit(_data, size) {
       }
     }
   }
-
-  lineAnimationTick = setInterval(
-    () => {
-      d3.selectAll("line.connector")
-        .attr("x1", function(d) {
-          let name = this.getAttribute("data-name");
+  function drawLines(block) {
+    d3.selectAll("line.connector")
+      .attr("x1", function(d) {
+        let name = this.getAttribute("data-name");
+        let node = d?.children?.find((q) => q.name === name);
+        if (node) {
+          return node.x - d.ring;
+        } else return 0;
+      })
+      .attr("y1", function(d) {
+        let name = this.getAttribute("data-name");
+        let node = d?.children?.find((q) => q.name === name);
+        if (node) return node.y - d.ring;
+        else return 0;
+      })
+      .attr("style", "display:block")
+      .attr("stroke", "grey");
+  }
+  function drawCubes(block) {
+    d3.selectAll("g.line-group.cyan").each(function() {
+      d3.select(this)
+        .select("image")
+        .attr("style", function(d) {
+          let yoffset = -50;
+          let xoffset = -10;
+          let name = this.previousSibling.getAttribute("data-name");
+          let node = d?.children?.find((q) => q.name === name);
+          return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
+            d.ring +
+            xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
+        });
+      if (!isSelected(this.firstChild, block)) return;
+      d3.select(this)
+        .select("image")
+        .attr("style", function(d) {
+          let name = this.previousSibling.getAttribute("data-name");
           let node = d.children.find((q) => q.name === name);
           if (node) {
-            return node.x - d.ring;
-          } else return 0;
-        })
-        .attr("y1", function(d) {
-          let name = this.getAttribute("data-name");
-          let node = d.children.find((q) => q.name === name);
-          if (node) return node.y - d.ring;
-          else return 0;
-        })
-        .attr("style", "display:block")
-        .attr("stroke", "grey");
-      d3.selectAll("g.line-group.cyan").each(function() {
-        d3.select(this)
-          .select("image")
-          .attr("style", function(d) {
-            let yoffset = -50;
-            let xoffset = -10;
-            let name = this.previousSibling.getAttribute("data-name");
-            let node = d.children.find((q) => q.name === name);
-            return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
-              d.ring +
-              xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
-          });
-        if (!isSelected(this.firstChild)) return;
-        d3.select(this)
-          .select("image")
-          .attr("style", function(d) {
-            let name = this.previousSibling.getAttribute("data-name");
-            let node = d.children.find((q) => q.name === name);
-            if (node) {
-              let x = node.x - d.ring;
-              let y = node.y - d.ring;
-              return `opacity:1;transform: translate(-20px,-20px) rotateY(55deg) scale(1.3)`;
-            } else return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
-          });
-      });
-    },
-    ORBIT ? ORBIT_SPEED : 2500
-  );
+            let x = node.x - d.ring;
+            let y = node.y - d.ring;
+            return `opacity:1;transform: translate(-20px,-50px) rotateY(55deg) scale(1.3)`;
+          } else return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
+        });
+      setTimeout(() => {
+        d3.selectAll("line.connector").attr("stroke", "grey");
+      }, 3500);
+    });
+  }
+  animateCurrentBlock = function(block) {
+    drawLines(block);
+    drawCubes(block);
+  };
+  if (ORBIT) {
+    lineAnimationTick = setInterval(() => {
+      drawLines(window.currentBlock);
+      drawCubes(window.currentBlock);
+    }, ORBIT_SPEED);
+  } else {
+    animateCurrentBlock();
+  }
 
   orbit.start();
 
