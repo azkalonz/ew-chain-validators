@@ -4790,14 +4790,13 @@ image.cube-tween {
   cursor: pointer;
 }
 .panel-right {
-  background: linear-gradient(
-    180deg,
-    rgba(36, 34, 47, 1) 65%,
-    rgba(29, 27, 38, 1) 100%
-  );
+  background: linear-gradient( 180deg, rgba(36, 34, 47, 1) 65%, rgba(29, 27, 38, 1) 100% );
   color: #fff;
+  border-radius: 5px;
+  border: 1px solid #2b2a37;
   padding: 20px 24px !important;
   /* height: 100%; */
+  margin: 10px 0px;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14);
 }
 
