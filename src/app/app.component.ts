@@ -15,6 +15,7 @@ export class AppComponent {
   public currentBlock: any = {};
   public currentBlockNumber: string = "000,000,000";
   public validators = [];
+  public validatorsJson = [];
   private interval: any;
   private cubeAnimTimeout: any;
   private winRef: WindowRef;
@@ -56,7 +57,6 @@ export class AppComponent {
         }
       });
     }, 5000);
-    this.spinner.hide();
 
     setTimeout(() => {
       this.spinner.hide();
@@ -92,6 +92,7 @@ export class AppComponent {
               };
             else return q;
           });
+          this.validatorsJson = win.data2;
           win.clearInterval(win.d3Data);
         }
       }, 3000);
