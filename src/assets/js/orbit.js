@@ -181,7 +181,7 @@ function drawOrbit(_data, size) {
     let name = el.getAttribute("data-name");
     let node = window.data2?.find((q) => q.name === name);
     if (node && currentBlock) {
-      if (!!node.address.find((q) => q === currentBlock.author)) {
+      if (!!node.address?.find((q) => q === currentBlock.author)) {
         d3.selectAll("line.connector").each(function() {
           if (this.getAttribute("data-name") === name) {
             d3.select(this).attr("stroke", "cyan");
@@ -230,7 +230,7 @@ function drawOrbit(_data, size) {
         .select("image")
         .attr("style", function(d) {
           let name = this.previousSibling.getAttribute("data-name");
-          let node = d.children.find((q) => q.name === name);
+          let node = d.children?.find((q) => q.name === name);
           if (node) {
             let x = node.x - d.ring;
             let y = node.y - d.ring;
