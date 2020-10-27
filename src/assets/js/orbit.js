@@ -76,7 +76,9 @@ function drawOrbit(_data, size) {
         .attr("x2", 0)
         .attr("y2", 0)
         .attr("stroke-dasharray", "6,6")
-        .style("stroke-width", "2");
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
+        .attr("stroke-width", "2px");
     });
   d3.selectAll("g.line-group.cyan")
     .append("image")
@@ -141,7 +143,7 @@ function drawOrbit(_data, size) {
     })
     .style("fill", "none")
     .style("stroke", "cyan")
-    .style("stroke-width", "4px")
+    .style("stroke-width", "2px")
     .style("stroke-opacity", 1);
   function raise(d) {
     d3.selectAll("g.node").each(function() {
@@ -186,7 +188,7 @@ function drawOrbit(_data, size) {
           if (this.getAttribute("data-name") === name) {
             d3.select(this).attr("stroke", "cyan");
           } else {
-            d3.select(this).attr("stroke", "grey");
+            d3.select(this).attr("stroke", "#684999");
           }
         });
         return true;
@@ -209,7 +211,7 @@ function drawOrbit(_data, size) {
         else return 0;
       })
       .attr("style", "display:block")
-      .attr("stroke", "grey");
+      .attr("stroke", "#684999");
   }
   function drawCubes(block) {
     d3.selectAll("g.line-group.cyan").each(function() {
@@ -238,7 +240,7 @@ function drawOrbit(_data, size) {
           } else return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
         });
       window.turnoffLineTick = setTimeout(() => {
-        d3.selectAll("line.connector").attr("stroke", "grey");
+        d3.selectAll("line.connector").attr("stroke", "#684999");
       }, 3500);
     });
   }

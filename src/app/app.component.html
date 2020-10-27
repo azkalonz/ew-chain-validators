@@ -30,13 +30,13 @@
       *ngFor="let validator of validatorsJson; index as i"
     >
       <a name="validator-{{ i }}"></a>
-      <h3 class="affiliate-title">{{ validator.name }}</h3>
+      <h4 class="affiliate-title">{{ validator.name }}</h4>
       <div class="affiliate-img">
         <img [src]="validator.logo" />
       </div>
       <div>
         <div class="affiliate-site">
-          <a href="https://www.energyweb.org/" target="_blank">{{
+          <a href={{validator.website}} target="_blank">{{
             validator.website
           }}</a>
         </div>
