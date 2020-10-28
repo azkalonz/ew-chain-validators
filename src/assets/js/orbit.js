@@ -241,6 +241,17 @@ function drawOrbit(_data, size) {
         });
       window.turnoffLineTick = setTimeout(() => {
         d3.selectAll("line.connector").attr("stroke", "#684999");
+        d3.select(this)
+          .select("image")
+          .attr("style", function(d) {
+            let yoffset = -50;
+            let xoffset = -10;
+            let name = this.previousSibling.getAttribute("data-name");
+            let node = d?.children?.find((q) => q.name === name);
+            return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
+              d.ring +
+              xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
+          });
       }, 3500);
     });
   }
