@@ -4,7 +4,7 @@ $.isMobile = () =>
   );
 let orbitPan = $(".orbit-container")[0];
 orbitPan = Panzoom(orbitPan, {
-  exclude: Array.from(document.querySelectorAll("image")),
+  exclude: Array.from(document.querySelectorAll("g.node:not(.parent)")),
   minScale: 1,
   cursor: "auto",
 });

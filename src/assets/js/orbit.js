@@ -106,7 +106,7 @@ function drawOrbit(_data, size) {
     })
     .attr("class", "node-logo")
     .attr("width", 50)
-    .on("mousedown", function(d, i) {
+    .on("click", function(d, i) {
       let name = "validator-" + i;
       let offset =
         $("a[name=" + name + "]").offset().top -
