@@ -33,3 +33,13 @@ $.zoomControl = function(el, action) {
       orbitPan.reset();
   }
 };
+function resetOnDesktop() {
+  if (!$.isMobile()) {
+    orbitPan.reset();
+    orbitPan.setOptions({ disablePan: true });
+  } else {
+    orbitPan.setOptions({ disablePan: false });
+  }
+}
+$(window).on("resize", resetOnDesktop);
+resetOnDesktop();
