@@ -10,7 +10,7 @@
 }
 
 body {
-  background: url("../images/bg-validators.jpg") no-repeat center center fixed;
+  background: url("../images/bg-validators.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -91,17 +91,23 @@ image.node-logo {
 }
 
 @media screen and (max-width: 991px) {
+  .no-scroll-on-mobile {
+    overflow: hidden;
+  }
   .container-full {
     display: flex;
     overflow: scroll !important;
     height: 100% !important;
+  }
+  .validator-info {
+    display: none;
   }
 }
 
 @media screen and (max-width: 800px) {
   svg,
   #viz {
-    transform: scale(0.8);
+    transform: scale(0.7);
   }
   .page-container {
     /* zoom: 80%; */
@@ -121,7 +127,7 @@ image.node-logo {
 @media screen and (max-width: 500px) {
   svg,
   #viz {
-    transform: scale(0.7);
+    transform: scale(0.66);
   }
   .page-container {
     /* zoom: 30%; */
@@ -4790,13 +4796,17 @@ image.cube-tween {
   cursor: pointer;
 }
 .panel-right {
-  background: linear-gradient( 180deg, rgba(36, 34, 47, 0) 65%, rgba(29, 27, 38, 1) 100% );
-    color: #FFF;
-    border-radius: 5px;
-    border: 1px solid #2b2a37;
-    padding: 20px 24px !important;
-    margin: 10px 0px;
-    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(36, 34, 47, 0) 65%,
+    rgba(29, 27, 38, 1) 100%
+  );
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #2b2a37;
+  padding: 20px 24px !important;
+  margin: 10px 0px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14);
 }
 
 a {
@@ -4820,7 +4830,7 @@ a:hover {
 }
 
 .affiliate-title {
-  color: #FFF;
+  color: #fff;
   font-weight: 900 !important;
   margin: 0 0 15px 0;
 }
@@ -4880,7 +4890,7 @@ a:hover {
   margin: 10px;
 }
 
-/* custom scroll */ 
+/* custom scroll */
 
 /* width */
 ::-webkit-scrollbar {
@@ -4906,20 +4916,20 @@ a:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #65616a; 
+  background: #65616a;
   border-radius: 10px;
 }
 
 ::-moz-scrollbar-thumb {
-  background: #65616a; 
+  background: #65616a;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #33CBCB; 
+  background: #33cbcb;
 }
 
 ::-moz-scrollbar-thumb:hover {
-  background: #33CBCB; 
+  background: #33cbcb;
 }

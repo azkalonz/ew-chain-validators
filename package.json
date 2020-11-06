@@ -30,6 +30,7 @@
     "bignumber.js": "^9.0.0",
     "bootstrap": "^4.5.0",
     "crypto-js": "^4.0.0",
+    "jquery.panzoom": "^3.2.3",
     "ngx-socket-io": "^2.1.1",
     "ngx-spinner": "^7.2.0",
     "node-sass": "^4.14.1",

@@ -1,9 +1,11 @@
-let ORBIT_SPEED = 20;
-let ORBIT = false;
+const ORBIT_SPEED = 20;
+const ORBIT = false;
 let lineAnimationTick;
+const RAISE_OFFSET = (i) => i >= 0 && i <= 36;
+
 window.animateCurrentBlock = function() {};
 
-function makeViz(size = [1500, 1500]) {
+function makeViz(size = [3500, 3500]) {
   d3.json("assets/js/validators.json", function(data) {
     drawOrbit(data, size);
     window.data2 = data?.children;
@@ -163,12 +165,17 @@ function drawOrbit(_data, size) {
     });
   }
   orbit.on("tick", function() {
-    d3.selectAll("g.node").attr("style", function(d) {
+    let toBeRaised = [];
+    d3.selectAll("g.node").attr("style", function(d, i) {
       let transform = "transform:translate(" + d.x + "px," + d.y + "px); ";
-      if (d.x >= 1000) {
-        raise(d);
+      if (RAISE_OFFSET(i)) {
+        toBeRaised.push(d);
       }
+      if (!(d.angle % 1));
       return transform;
+    });
+    toBeRaised.forEach(function(d) {
+      raise(d);
     });
     d3.selectAll("circle.ring")
       .attr("cx", function(d) {

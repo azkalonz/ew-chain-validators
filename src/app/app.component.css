@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=app.component.css.map */
+.orbit-container {
+  position: relative;
+  -webkit-transform: rotateX(55deg) translateY(-2300px) scale(0.5);
+          transform: rotateX(55deg) translateY(-2300px) scale(0.5);
+  margin: 0 auto;
+}
+
+.validator-info.h-100 {
+  overflow: hidden auto;
+}
+
+@-webkit-keyframes modifiedBounce {
+  from {
+    -webkit-transform: translate(-28px, -140px) scale(2) rotateY(55deg);
+            transform: translate(-28px, -140px) scale(2) rotateY(55deg);
+  }
+  to {
+    -webkit-transform: translate(-28px, -142px) scale(2) rotateY(55deg);
+            transform: translate(-28px, -142px) scale(2) rotateY(55deg);
+  }
+}
+
+@keyframes modifiedBounce {
+  from {
+    -webkit-transform: translate(-28px, -140px) scale(2) rotateY(55deg);
+            transform: translate(-28px, -140px) scale(2) rotateY(55deg);
+  }
+  to {
+    -webkit-transform: translate(-28px, -142px) scale(2) rotateY(55deg);
+            transform: translate(-28px, -142px) scale(2) rotateY(55deg);
+  }
+}
+/*# sourceMappingURL=app.component.css.map */
