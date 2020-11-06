@@ -58,7 +58,6 @@ export class AppComponent {
       });
     }, 5000);
 
-    this.spinner.hide();
     setTimeout(() => {
       this.spinner.hide();
     }, 3000);
