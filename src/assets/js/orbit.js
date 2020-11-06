@@ -92,7 +92,8 @@ function drawOrbit(_data, size) {
     .attr("width", "250")
     .attr(
       "style",
-      "transform: translate(-256px, -200px) scale(6) rotateY(55deg)"
+      `transform: translate(-256px, -200px) scale(6) rotateY(55deg);
+      -webkit-transform: translate(-256px, -200px) scale(6) rotateY(55deg)`
     );
 
   d3.selectAll("g.node:not(.parent)")
@@ -124,7 +125,7 @@ function drawOrbit(_data, size) {
     .attr("href", "assets/images/node.svg")
     .attr(
       "style",
-      "transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;"
+      `transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;`
     );
   d3.select("svg")
     .selectAll("circle.orbits")
@@ -164,7 +165,7 @@ function drawOrbit(_data, size) {
   }
   orbit.on("tick", function() {
     d3.selectAll("g.node").attr("style", function(d) {
-      let transform = "transform:translate(" + d.x + "px," + d.y + "px); ";
+      let transform = `transform:translate(${d.x}px,${d.y}px);-webkit-transform:translate(${d.x}px, ${d.y}px); `;
       if (d.x >= 1000) {
         raise(d);
       }
@@ -222,9 +223,10 @@ function drawOrbit(_data, size) {
           let xoffset = -10;
           let name = this.previousSibling.getAttribute("data-name");
           let node = d?.children?.find((q) => q.name === name);
-          return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
+          return `opacity:0;transition: transform 0s ease-out;
+          transform: translate(${node.x -
             d.ring +
-            xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
+            xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3);-webkit-transform: translate(${node.x - d.ring + xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
         });
       if (!isSelected(this.firstChild, block)) return;
       window.clearTimeout(window.turnoffLineTick);
@@ -236,8 +238,11 @@ function drawOrbit(_data, size) {
           if (node) {
             let x = node.x - d.ring;
             let y = node.y - d.ring;
-            return `opacity:1;transform: translate(-20px,-50px) rotateY(55deg) scale(1.3)`;
-          } else return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
+            return `opacity:1;
+            transform: translate(-20px,-50px) rotateY(55deg) scale(1.3);-webkit-transform: translate(-20px,-50px) rotateY(55deg) scale(1.3)`;
+          } else
+            return `opacity:0;transition: transform 0s ease-out;
+          transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3);-webkit-transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
         });
       window.turnoffLineTick = setTimeout(() => {
         d3.selectAll("line.connector").attr("stroke", "#684999");
@@ -248,9 +253,10 @@ function drawOrbit(_data, size) {
             let xoffset = -10;
             let name = this.previousSibling.getAttribute("data-name");
             let node = d?.children?.find((q) => q.name === name);
-            return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
+            return `opacity:0;transition: transform 0s ease-out;
+            transform: translate(${node.x -
               d.ring +
-              xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
+              xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3);-webkit-transform: translate(${node.x - d.ring + xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
           });
       }, 3500);
     });
