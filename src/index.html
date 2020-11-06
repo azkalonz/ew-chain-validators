@@ -5,7 +5,10 @@
     <title>EnergyWeb Chain Validators</title>
     <base href="./" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -30,7 +33,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <script src="assets/js/orbit.js"></script>
+    <script src="https://unpkg.com/panzoom@9.3.0/dist/panzoom.min.js"></script>
+    <script src="/assets/js/panzoom.min.js"></script>
   </head>
 
   <body onload="makeViz()">
@@ -49,6 +53,7 @@
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="assets/js/orbit.js"></script>
   <script src="/assets/js/jquery.panzoom.js"></script>
   <script type="text/javascript" src="assets/js/bezier.js"></script>
   <script

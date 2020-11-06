@@ -10,7 +10,7 @@
 }
 
 body {
-  background: url("../images/bg-validators.jpg") no-repeat center center;
+  background: url("../images/bg-validators.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -35,7 +35,9 @@ h2 {
   width: 280px;
   opacity: 0.6;
 }
-
+.show-on-mobile {
+  visibility: hidden;
+}
 .btn-primary {
   background-color: #33cbcb !important;
   border: 0 !important;
@@ -93,10 +95,14 @@ image.node-logo {
 @media screen and (max-width: 991px) {
   .no-scroll-on-mobile {
     overflow: hidden;
+    padding: 0 !important;
+  }
+  .show-on-mobile {
+    visibility: visible;
   }
   .container-full {
     display: flex;
-    overflow: scroll !important;
+    overflow: hidden !important;
     height: 100% !important;
   }
   .validator-info {
@@ -105,10 +111,6 @@ image.node-logo {
 }
 
 @media screen and (max-width: 800px) {
-  svg,
-  #viz {
-    transform: scale(0.7);
-  }
   .page-container {
     /* zoom: 80%; */
     -webkit-transform: scale(0.8, 0.8);
@@ -125,10 +127,6 @@ image.node-logo {
 }
 
 @media screen and (max-width: 500px) {
-  svg,
-  #viz {
-    transform: scale(0.66);
-  }
   .page-container {
     /* zoom: 30%; */
     -webkit-transform: scale(0.3, 0.3);

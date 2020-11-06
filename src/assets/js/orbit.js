@@ -1,11 +1,12 @@
+const ORBIT_SIZE = 4000;
 const ORBIT_SPEED = 20;
 const ORBIT = false;
-let lineAnimationTick;
 const RAISE_OFFSET = (i) => i >= 0 && i <= 36;
+let lineAnimationTick;
 
 window.animateCurrentBlock = function() {};
 
-function makeViz(size = [3500, 3500]) {
+function makeViz(size = [ORBIT_SIZE, ORBIT_SIZE]) {
   d3.json("assets/js/validators.json", function(data) {
     drawOrbit(data, size);
     window.data2 = data?.children;
@@ -94,7 +95,8 @@ function drawOrbit(_data, size) {
     .attr("width", "250")
     .attr(
       "style",
-      "transform: translate(-256px, -200px) scale(6) rotateY(55deg)"
+      `transform: translate(-256px, -200px) scale(6) rotateY(55deg);
+      -webkit-transform: translate(-256px, -200px) scale(6) rotateY(55deg)`
     );
 
   d3.selectAll("g.node:not(.parent)")
@@ -126,7 +128,7 @@ function drawOrbit(_data, size) {
     .attr("href", "assets/images/node.svg")
     .attr(
       "style",
-      "transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;"
+      `transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;`
     );
   d3.select("svg")
     .selectAll("circle.orbits")
@@ -229,9 +231,10 @@ function drawOrbit(_data, size) {
           let xoffset = -10;
           let name = this.previousSibling.getAttribute("data-name");
           let node = d?.children?.find((q) => q.name === name);
-          return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
+          return `opacity:0;transition: transform 0s ease-out;
+          transform: translate(${node.x -
             d.ring +
-            xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
+            xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3);-webkit-transform: translate(${node.x - d.ring + xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
         });
       if (!isSelected(this.firstChild, block)) return;
       window.clearTimeout(window.turnoffLineTick);
@@ -243,8 +246,11 @@ function drawOrbit(_data, size) {
           if (node) {
             let x = node.x - d.ring;
             let y = node.y - d.ring;
-            return `opacity:1;transform: translate(-20px,-50px) rotateY(55deg) scale(1.3)`;
-          } else return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
+            return `opacity:1;
+            transform: translate(-20px,-50px) rotateY(55deg) scale(1.3);-webkit-transform: translate(-20px,-50px) rotateY(55deg) scale(1.3)`;
+          } else
+            return `opacity:0;transition: transform 0s ease-out;
+          transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3);-webkit-transform: translate(${node.x}px,${node.y}px) rotateY(55deg) scale(1.3)`;
         });
       window.turnoffLineTick = setTimeout(() => {
         d3.selectAll("line.connector").attr("stroke", "#684999");
@@ -255,9 +261,10 @@ function drawOrbit(_data, size) {
             let xoffset = -10;
             let name = this.previousSibling.getAttribute("data-name");
             let node = d?.children?.find((q) => q.name === name);
-            return `opacity:0;transition: transform 0s ease-out;transform: translate(${node.x -
+            return `opacity:0;transition: transform 0s ease-out;
+            transform: translate(${node.x -
               d.ring +
-              xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
+              xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3);-webkit-transform: translate(${node.x - d.ring + xoffset}px,${node.y + yoffset - d.ring}px)  rotateY(55deg) scale(1.3)`;
           });
       }, 3500);
     });
@@ -299,3 +306,14 @@ function drawOrbit(_data, size) {
     }
   }
 }
+let $svg = $("svg");
+let initialScale;
+function scaleOrbit() {
+  let scale = ($(window).width() + 300) / ORBIT_SIZE;
+  $svg.css("transform", `scale(${scale})`);
+  if (!initialScale) {
+    initialScale = scale;
+  }
+}
+$(window).on("resize", scaleOrbit);
+scaleOrbit();
