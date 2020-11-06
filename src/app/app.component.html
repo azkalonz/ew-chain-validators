@@ -14,6 +14,10 @@
 <div class="row container-full">
   <div class="col-12 col-lg-9 h-100 no-scroll-on-mobile">
     <div class="center-page no-scroll-on-mobile h-100 w-100">
+      <div class="zoom-controls">
+        <button onclick="$.zoomControl(this,'zoom-in')" class="plus">+</button>
+        <button onclick="$.zoomControl(this,'reset')" class="minus">-</button>
+      </div>
       <div class="orbit-container">
         <div class="number-wrapper" _ngcontent-fdj-c0="">
           <div _ngcontent-fdj-c0="" class="digi-number">
@@ -23,10 +27,6 @@
         <div id="viz"><svg></svg></div>
       </div>
     </div>
-  </div>
-  <div class="zoom-controls show-on-mobile">
-    <button onclick="$.zoomControl(this,'zoom-in')" class="plus">+</button>
-    <button onclick="$.zoomControl(this,'reset')" class="minus">-</button>
   </div>
   <div class="col-12 col-lg-3 h-100 validator-info">
     <div

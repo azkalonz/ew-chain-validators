@@ -128,7 +128,12 @@ function drawOrbit(_data, size) {
     .attr("href", "assets/images/node.svg")
     .attr(
       "style",
-      `transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(3);pointer-events:none;`
+      function(){
+        let scale = 3
+        if(isSafari())
+        scale = 1.56
+        return `transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;`
+      }
     );
   d3.select("svg")
     .selectAll("circle.orbits")
@@ -306,6 +311,11 @@ function drawOrbit(_data, size) {
     }
   }
 }
+const isSafari = ()=>navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+navigator.userAgent &&
+navigator.userAgent.indexOf('CriOS') == -1 &&
+navigator.userAgent.indexOf('FxiOS') == -1;
+
 let $svg = $("svg");
 let initialScale;
 function scaleOrbit() {

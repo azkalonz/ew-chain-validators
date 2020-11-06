@@ -41,5 +41,5 @@ function resetOnDesktop() {
     orbitPan.setOptions({ disablePan: false });
   }
 }
-$(window).on("resize", resetOnDesktop);
-resetOnDesktop();
+//$(window).on("resize", resetOnDesktop);
+//resetOnDesktop();
