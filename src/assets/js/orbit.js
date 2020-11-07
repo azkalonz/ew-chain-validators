@@ -130,11 +130,13 @@ function drawOrbit(_data, size) {
 
   d3.selectAll("g.node:not(.parent)")
     .append("image")
+    .attr("width", "500")
     .attr("href", "assets/images/node.svg")
     .attr("style", function() {
       let scale = 3;
       if (isSafari()) scale = 1.56;
-      return `transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;`;
+      return "transform: rotateY(55deg) translate(-218px, -262px)";
+      // return `transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;`;
     });
   d3.select("svg")
     .selectAll("circle.orbits")
