@@ -135,7 +135,7 @@ function drawOrbit(_data, size) {
     .attr("style", function() {
       let scale = 3;
       if (isSafari()) scale = 1.56;
-      return "transform: rotateY(55deg) translate(-218px, -262px)";
+      return "transform: rotateY(55deg) translate(-218px, -262px);-webkit-transform: rotateY(55deg) translate(-218px, -262px); pointer-events: none;";
       // return `transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;`;
     });
   d3.select("svg")
