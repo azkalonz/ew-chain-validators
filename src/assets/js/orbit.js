@@ -1,7 +1,7 @@
-const ORBIT_SIZE = 4000;
+const ORBIT_SIZE = 1500;
 const ORBIT_SPEED = 20;
 const ORBIT = false;
-const RAISE_OFFSET = (i) => i >= 0 && i <= 36;
+const RAISE_OFFSET = (i) => i >= 0 && i <= 9;
 let lineAnimationTick;
 
 window.animateCurrentBlock = function() {};
