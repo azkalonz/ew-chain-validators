@@ -141,6 +141,7 @@ image.node-logo {
   position: absolute;
   transform: scale(1.5, 2.5);
   display: flex;
+  pointer-events: none;
   justify-content: center;
   top: 50%;
   left: 0;

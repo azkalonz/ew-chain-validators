@@ -18,11 +18,19 @@ function checkScale(scale) {
   } else {
     $(".disabled").removeClass("disabled");
   }
+  orbitPan.setOptions({ disablePan: scale === 1 });
 }
-$(".orbit-container")[0].addEventListener("panzoomchange", (event) => {
-  checkScale(event.detail?.scale);
+$(".orbit-container")[0].addEventListener("panzoomzoom", (event) => {
+  const { scale } = event.detail;
+  if (scale === 1) {
+    orbitPan.reset();
+  }
 });
-$.zoomControl = function(el, action) {
+$(".orbit-container")[0].addEventListener("panzoomchange", (event) => {
+  const { scale } = event.detail;
+  checkScale(scale);
+});
+$.zoomControl = function(action) {
   switch (action) {
     case "zoom-in":
       let scale = orbitPan.getScale() + 0.5;
@@ -43,3 +51,11 @@ function resetOnDesktop() {
 }
 //$(window).on("resize", resetOnDesktop);
 //resetOnDesktop();
+$(".orbit-container")[0].parentElement.addEventListener("wheel", function(
+  event
+) {
+  const { deltaY, ctrlKey } = event;
+  if (ctrlKey) return;
+  if (deltaY > 0) orbitPan.zoom(orbitPan.getScale() - 0.5);
+  else orbitPan.zoom(orbitPan.getScale() + 0.5);
+});

@@ -107,18 +107,23 @@ function drawOrbit(_data, size) {
     .attr("class", "node-logo")
     .attr("width", 50)
     .on("click", function(d, i) {
-      let name = "validator-" + i;
-      let offset =
-        $("a[name=" + name + "]").offset().top -
-        $("a[name=" + name + "]")
-          .offsetParent()
-          .offset().top;
-      $(".validator-info").animate(
-        {
-          scrollTop: offset + $(".validator-info").scrollTop(),
-        },
-        500
-      );
+      if (!$.isMobile()) {
+        let name = "validator-" + i;
+        let offset =
+          $("a[name=" + name + "]").offset().top -
+          $("a[name=" + name + "]")
+            .offsetParent()
+            .offset().top;
+        $(".validator-info").animate(
+          {
+            scrollTop: offset + $(".validator-info").scrollTop() - 20,
+          },
+          500
+        );
+      } else {
+        $.companyDetailsDialog(d, true);
+        nodeOut(d);
+      }
     })
     .on("mouseover", nodeOver)
     .on("mouseout", nodeOut);
@@ -126,15 +131,11 @@ function drawOrbit(_data, size) {
   d3.selectAll("g.node:not(.parent)")
     .append("image")
     .attr("href", "assets/images/node.svg")
-    .attr(
-      "style",
-      function(){
-        let scale = 3
-        if(isSafari())
-        scale = 1.56
-        return `transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;`
-      }
-    );
+    .attr("style", function() {
+      let scale = 3;
+      if (isSafari()) scale = 1.56;
+      return `transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;-webkit-transform: translate(-130px, -270px) rotateY(55deg) scale(${scale});pointer-events:none;`;
+    });
   d3.select("svg")
     .selectAll("circle.orbits")
     .data(orbit.orbitalRings())
@@ -311,10 +312,26 @@ function drawOrbit(_data, size) {
     }
   }
 }
-const isSafari = ()=>navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-navigator.userAgent &&
-navigator.userAgent.indexOf('CriOS') == -1 &&
-navigator.userAgent.indexOf('FxiOS') == -1;
+$.companyDetailsDialog = (d, visible) => {
+  let details = $("#c-details");
+  details.find(".name").text(d.name || "");
+  details.find(".website a").attr("href", d.website || "");
+  details.find(".website a").text(d.website || "");
+  details.find(".logo img").attr("src", d.logo || "");
+  details.find(".description .text").text(d.description || "");
+  details.find(".member-since .year").text(d.memberSince || "");
+  if (!visible) {
+    details.removeClass("active");
+  } else {
+    details.addClass("active");
+  }
+};
+const isSafari = () =>
+  navigator.vendor &&
+  navigator.vendor.indexOf("Apple") > -1 &&
+  navigator.userAgent &&
+  navigator.userAgent.indexOf("CriOS") == -1 &&
+  navigator.userAgent.indexOf("FxiOS") == -1;
 
 let $svg = $("svg");
 let initialScale;
